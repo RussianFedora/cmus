@@ -1,6 +1,6 @@
 Name:           cmus
 Version:        2.7.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
@@ -26,7 +26,6 @@ BuildRequires:  pulseaudio-libs-devel
 BuildRequires:  alsa-lib-devel
 BuildRequires:  jack-audio-connection-kit-devel
 BuildRequires:  libsamplerate-devel
-BuildRequires:  arts-devel
 BuildRequires:  libdiscid-devel
 
 %description
@@ -61,5 +60,8 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_libdir}/%{name}
 
 %changelog
+* Thu Sep 03 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-2.R
+- remove BuildRequires: arts-devel
+
 * Wed Sep 02 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-1.R
 - Initial package.
