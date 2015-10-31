@@ -1,6 +1,6 @@
 Name:           cmus
 Version:        2.7.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
@@ -50,11 +50,13 @@ Small, fast and powerful console music player for Unix-like operating systems.
 %install
 %make_install
 
+mv %{buildroot}%{_docdir}/%{name}/examples .
+
 mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d/
 install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash_completion.d/
 
 %files
-%doc AUTHORS README.md
+%doc AUTHORS README.md examples
 %license COPYING
 %config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}.bash-completion
 %{_bindir}/%{name}
@@ -66,11 +68,14 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man7/%{name}-tutorial.7.*
 
 %changelog
+* Sat Oct 31 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-4.R
+- move examples to right path
+
 * Thu Oct 22 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-3.R
 - add BR libcdio-paranoia-devel
 - add BR libmikmod-devel
-- add %make_build
-- remove make %{?_smp_mflags} V=2
+- add %%make_build
+- remove make %%{?_smp_mflags} V=2
 - cleanup spec
 
 * Thu Sep 03 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-2.R
