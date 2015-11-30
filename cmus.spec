@@ -45,7 +45,7 @@ Small, fast and powerful console music player for Unix-like operating systems.
         CONFIG_ARTS=n \
         CONFIG_SUN=n
 
-%make_build
+%make_build V=2
 
 %install
 %make_install
