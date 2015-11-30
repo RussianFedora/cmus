@@ -7,31 +7,31 @@ License:        GPLv2+
 URL:            https://cmus.github.io/
 Source0:        https://github.com/%{name}/%{name}/archive/v%{version}.tar.gz
   
-BuildRequires:  ncurses-devel
-BuildRequires:  alsa-lib-devel
-BuildRequires:  libao-devel
-BuildRequires:  libcddb-devel
-BuildRequires:  opusfile-devel
-BuildRequires:  libcue-devel
-BuildRequires:  libmodplug-devel
-BuildRequires:  libmpcdec-devel
-BuildRequires:  libvorbis-devel
-BuildRequires:  flac-devel
+BuildRequires:  pkgconfig(ao)
+BuildRequires:  pkgconfig(alsa)
+BuildRequires:  pkgconfig(flac)
 BuildRequires:  faad2-devel
-BuildRequires:  ffmpeg-devel
-BuildRequires:  libmad-devel
+BuildRequires:  pkgconfig(jack)
+BuildRequires:  pkgconfig(libavformat)
+BuildRequires:  pkgconfig(libcddb)
+BuildRequires:  pkgconfig(libcdio_paranoia)
+BuildRequires:  pkgconfig(libcue)
+BuildRequires:  pkgconfig(libdiscid)
+BuildRequires:  pkgconfig(libmikmod)
+BuildRequires:  pkgconfig(libmodplug)
+BuildRequires:  pkgconfig(libpulse)
+BuildRequires:  libmpcdec-devel
 BuildRequires:  libmp4v2-devel
-BuildRequires:  wavpack-devel
-BuildRequires:  pulseaudio-libs-devel
-BuildRequires:  jack-audio-connection-kit-devel
-BuildRequires:  libsamplerate-devel
-BuildRequires:  libdiscid-devel
-BuildRequires:  libcdio-paranoia-devel
-BuildRequires:  libmikmod-devel
+BuildRequires:  pkgconfig(mad)
+BuildRequires:  pkgconfig(ncurses)
+BuildRequires:  pkgconfig(opusfile)
+BuildRequires:  pkgconfig(samplerate)
+BuildRequires:  pkgconfig(vorbis)
+BuildRequires:  pkgconfig(wavpack)
 
 %description
 Small, fast and powerful console music player for Unix-like operating systems.
-                                                                               
+                                                                             
 %prep
 %setup -q
 
