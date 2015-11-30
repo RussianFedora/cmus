@@ -1,12 +1,12 @@
 Name:           cmus
 Version:        2.7.1
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
 URL:            https://cmus.github.io/
 Source0:        https://github.com/%{name}/%{name}/archive/v%{version}.tar.gz
-  
+
 BuildRequires:  pkgconfig(ao)
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(flac)
@@ -69,6 +69,11 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man7/%{name}-tutorial.7.*
 
 %changelog
+* Mon Nov 30 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-5.R
+- add V=2 (Make the build verbose)
+- use pkgconfig for BuildRequires
+- use proper CFLAGS
+
 * Sat Oct 31 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-4.R
 - move examples to right path
 
