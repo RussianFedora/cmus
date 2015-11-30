@@ -39,6 +39,7 @@ Small, fast and powerful console music player for Unix-like operating systems.
 ./configure \
         prefix=%{_prefix} \
         libdir=%{_libdir} \
+        CFLAGS="%{optflags}" \
         CONFIG_MIKMOD=y \
         CONFIG_VTX=n \
         CONFIG_ROAR=n \
