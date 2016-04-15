@@ -83,12 +83,11 @@ Small, fast and powerful console music player for Unix-like operating systems.
 mv %{buildroot}%{_docdir}/%{name}/examples .
 
 mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d/
-install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash_completion.d/
+install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash_completion.d/%{name}
 
 %files
 %doc AUTHORS README.md examples
 %license COPYING
-%config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}.bash-completion
 %{_bindir}/%{name}
 %{_bindir}/%{name}-remote
 %{_datadir}/%{name}
@@ -96,6 +95,7 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man1/%{name}.1.*
 %{_mandir}/man1/%{name}-remote.1.*
 %{_mandir}/man7/%{name}-tutorial.7.*
+%config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}
 
 %changelog
 * Mon Nov 30 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-5.R
