@@ -33,7 +33,7 @@ BuildRequires:  pkgconfig(wavpack)
 Small, fast and powerful console music player for Unix-like operating systems.
                                                                              
 %prep
-%setup -q
+%autosetup
 
 %build
 ./configure \
