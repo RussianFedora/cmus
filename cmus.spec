@@ -38,13 +38,42 @@ Small, fast and powerful console music player for Unix-like operating systems.
 %build
 ./configure \
         prefix=%{_prefix} \
+        bindir=%{_bindir} \
+        datadir=%{_datadir} \
         libdir=%{_libdir} \
+        mandir=%{_mandir} \
+        exampledir=%{_docdir}/%{name}/examples \
         CFLAGS="%{optflags}" \
-        CONFIG_MIKMOD=y \
-        CONFIG_VTX=n \
-        CONFIG_ROAR=n \
+        CONFIG_AAC=y \
+        CONFIG_ALSA=y \
+        CONFIG_AO=y \
         CONFIG_ARTS=n \
-        CONFIG_SUN=n
+        CONFIG_CDDB=y \
+        CONFIG_CDIO=y \
+        CONFIG_CUE=y \
+        CONFIG_COREAUDIO=n \
+        CONFIG_DISCID=y \
+        CONFIG_FFMPEG=y \
+        CONFIG_FLAC=y \
+        CONFIG_JACK=y \
+        CONFIG_MAD=y \
+        CONFIG_MIKMOD=y \
+        CONFIG_MODPLUG=y \
+        CONFIG_MPC=y \
+        CONFIG_MP4=y \
+        CONFIG_OPUS=y \
+        CONFIG_OSS=y \
+        CONFIG_PULSE=y \
+        CONFIG_ROAR=n \
+        CONFIG_SAMPLERATE=y \
+        CONFIG_SNDIO=n \
+        CONFIG_SUN=n \
+        CONFIG_TREMOR=n \
+        CONFIG_VORBIS=y \
+        CONFIG_VTX=n \
+        CONFIG_WAV=y \
+        CONFIG_WAVPACK=y \
+        CONFIG_WAVEOUT=n
 
 %make_build V=2
 
