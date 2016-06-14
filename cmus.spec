@@ -1,6 +1,6 @@
 Name:           cmus
 Version:        2.7.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
@@ -51,7 +51,6 @@ Small, fast and powerful console music player for Unix-like operating systems.
         CONFIG_CDDB=y \
         CONFIG_CDIO=y \
         CONFIG_CUE=y \
-        CONFIG_COREAUDIO=n \
         CONFIG_DISCID=y \
         CONFIG_FFMPEG=y \
         CONFIG_FLAC=y \
@@ -98,6 +97,9 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}
 
 %changelog
+* Tue Jun 14 2016 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-6.R
+- Rebuilt for FFmpeg 3.0.2
+
 * Mon Nov 30 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-5.R
 - add V=2 (Make the build verbose)
 - use pkgconfig for BuildRequires
