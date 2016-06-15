@@ -6,7 +6,8 @@ Summary:        Ncurses-Based Music Player
 License:        GPLv2+
 URL:            https://cmus.github.io/
 Source0:        https://github.com/%{name}/%{name}/archive/v%{version}.tar.gz
-
+# fix checking for successful build of ffmpeg.c... no
+Patch0:         fix-build-ffmpeg.c.patch
 BuildRequires:  pkgconfig(ao)
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(flac)
@@ -33,7 +34,7 @@ BuildRequires:  pkgconfig(wavpack)
 Small, fast and powerful console music player for Unix-like operating systems.
                                                                              
 %prep
-%autosetup
+%autosetup -p1
 
 %build
 ./configure \
@@ -94,11 +95,12 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man1/%{name}.1.*
 %{_mandir}/man1/%{name}-remote.1.*
 %{_mandir}/man7/%{name}-tutorial.7.*
-%config(noreplace) %{_sysconfdir}/bash_completion.d/%{name}
+%{_sysconfdir}/bash_completion.d/%{name}
 
 %changelog
 * Tue Jun 14 2016 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-6.R
-- Rebuilt for FFmpeg 3.0.2
+- rebuilt for FFmpeg 3.0.2
+- add fix-build-ffmpeg.c.patch
 
 * Mon Nov 30 2015 Maxim Orlov <murmansksity@gmail.com> - 2.7.1-5.R
 - add V=2 (Make the build verbose)
